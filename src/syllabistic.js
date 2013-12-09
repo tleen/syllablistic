@@ -1,6 +1,5 @@
-'use strict';
+// 'use strict'; - won't pass due to potential prblem with the use of 'this' in function invocation
 (function(){
-// http://dictionary.reference.com/browse/asyndeton
 
   var syllabistic = {};
   var root = this; // window or global, depending
@@ -18,7 +17,8 @@
   // - via async https://github.com/caolan/async/blob/b6a1336b/lib/async.js#L941
 
   // AMD / RequireJS
-  /* global define:true */
+  /* global define */
+
   if (typeof define !== 'undefined' && define.amd) {
     define([], function () {
       return syllabistic;
@@ -32,4 +32,4 @@
   else {
     root.syllabistic = syllabistic;
   }
-});
+}).call(this);
