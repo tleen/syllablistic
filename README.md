@@ -20,5 +20,5 @@ console.log(someWord, syllabistic.word(someWord));
 
 var someText = 'I am the very model of a modern Major General';
 console.log(someText, syllabistic.text(someText));
-//I am the very model of a modern Major General 16
+// I am the very model of a modern Major General 16
 ```  
