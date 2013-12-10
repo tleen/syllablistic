@@ -6,12 +6,22 @@
 
   // from: http://stackoverflow.com/questions/5686483/how-to-compute-number-of-syllables-in-a-word-in-javascript
   syllabistic.word = function(input){
-    var word = input.toLowerCase();
+    var word = input.toLowerCase().trim();
+    if(!word){ return 0; }
     if(word.length <= 3) { return 1; }
     word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
     word = word.replace(/^y/, '');
     return word.match(/[aeiouy]{1,2}/g).length;
   };
+
+  syllabistic.text = function(input){
+    var count = 0;
+    var components = input.split(/[\W]+/);
+    var len = components.length;
+    for(var i = 0; i < len; i++) count = (count + syllabistic.word(components[i]));
+    return count;
+  };
+
 
   // Methods for library exposure
   // - via async https://github.com/caolan/async/blob/b6a1336b/lib/async.js#L941
