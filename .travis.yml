@@ -1,9 +1,8 @@
 language: node_js
 node_js:
- - 0.9
- - 0.10
+ - "0.10"
 notifications:
  email:
-  - tl@thomasleen.com
+  - "tl@thomasleen.com"
 before_script:
  - "npm i -g jasmine-node"
