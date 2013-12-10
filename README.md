@@ -1,4 +1,4 @@
 syllablistic
 ============
 
-Generating syllable information from words
+Generating syllable information from words (english only).
