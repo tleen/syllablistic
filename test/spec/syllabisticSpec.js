@@ -2,6 +2,12 @@
 /* global syllabistic, describe, it, expect  */
 /* jshint loopfunc: true */
 
+// jasmine is a mess when it comes to running out of the browser :/
+if((!syllabistic) && require){
+/* jshint -W079 */ 
+  var syllabistic = require('../../src/syllabistic.js');
+}
+
 describe('Library loads correctly', function(){
   it('Should have a .word function', function(){
     expect(typeof syllabistic.word).toEqual('function');
