@@ -1,9 +1,9 @@
 {
   "name" : "syllablistic",
   "description" : "Utilities for getting syllable information from words",
-  "main" : "./src/syllabistic",
+  "main" : "./index.js",
   "author" : "Thomas Leen",
-  "version" : "0.0.3",
+  "version" : "0.1.0",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/tleen/syllablistic.git"
@@ -13,12 +13,16 @@
     "type" : "MIT",
     "url" : "https://github.com/tleen/syllablistic/blob/master/LICENSE"
   } ],
+  "dependencies" : {
+    "string" : "1.7.0"
+  },
   "devDependencies" : {
     "grunt" : "0.4.2",
-    "grunt-contrib-jasmine" : "0.5.2",
-    "grunt-contrib-jshint" : "0.7.2"
+    "grunt-cafe-mocha" : "0.1.10",
+    "grunt-contrib-jshint" : "0.7.2",
+    "should" : "2.1.1"
   },
   "scripts" : {
-    "test" : "jasmine-node test/spec/*.js"
+    "test" : "node_modules/grunt-cafe-mocha/node_modules/mocha/bin/mocha test/*.js"
   }
 }

@@ -1,17 +1,17 @@
 'use strict';
-/* global syllabistic, describe, it, expect  */
 /* jshint loopfunc: true */
 
-// jasmine is a mess when it comes to running out of the browser :/
-if((!syllabistic) && require){
-/* jshint -W079 */ 
-  var syllabistic = require('../../src/syllabistic.js');
-}
+var syllabistic = require('..');
+
 
 describe('Library loads correctly', function(){
   it('Should have a .word function', function(){
-    expect(typeof syllabistic.word).toEqual('function');
+    syllabistic.should.have.property('word');
   });
+  it('Should have a .text function', function(){
+    syllabistic.should.have.property('text');
+  });
+
 });
 
 
@@ -35,7 +35,7 @@ describe('Accurate results on test words', function(){
       var word = words[x];
       it('"' + word + '" should have ' + length + ' syllables', function(){
 	var result = syllabistic.word(word);
-	expect(length).toEqual(result);
+	length.should.equal(result);
       });
     }
   }
@@ -100,11 +100,8 @@ describe('Accurate results on test sentences', function(){
     it('"' + sentences[i].sentence + '" should have ' + sentences[i].count + ' syllables (+/- ' + sentences[i].precision + ')', function(sentence, count, precision){
       return function(){
 	var result = syllabistic.text(sentence);
-	if(precision === 0) expect(result).toEqual(count);
-	else{
-	  expect(result).toBeGreaterThan(count - precision);
-	  expect(result).toBeLessThan(count + precision); 
-	}
+	if(precision === 0) result.should.equal(count);
+	else result.should.be.above(count - precision).and.below(count + precision); 
       };
     }.call(undefined, sentences[i].sentence, sentences[i].count, sentences[i].precision));
   }
