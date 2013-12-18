@@ -4,7 +4,6 @@
   "main" : "./src/syllabistic",
   "author" : "Thomas Leen",
   "version" : "0.0.3",
-  "main" : "src/syllabistic.js",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/tleen/syllablistic.git"
