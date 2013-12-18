@@ -3,7 +3,7 @@
   "description" : "Utilities for getting syllable information from words",
   "main" : "./src/syllabistic",
   "author" : "Thomas Leen",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "main" : "src/syllabistic.js",
   "repository" : {
     "type" : "git",

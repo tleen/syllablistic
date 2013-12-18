@@ -18,7 +18,7 @@ describe('Library loads correctly', function(){
 // array index is expected # of syllables
 describe('Accurate results on test words', function(){
   var testWords = [
-    ['', ' ', '   ', ' + ', '()'],
+    ['', ' ', '   ', ' + ', '()', "\n", null],
     ['a', 'b', 'c', 'an', 'to', 'of', 'me', 'foo', 'bar', 'baz'],
     ['zero', 'endless', 'deeper', 'contest', 'honey', 'sentence'],
     ['fortunate', 'lunatic', 'comparable', 'generally', 'literature'],
