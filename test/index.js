@@ -1,7 +1,8 @@
 'use strict';
 /* jshint loopfunc: true */
 
-var syllabistic = require('..');
+var syllabistic = require('..'),
+should = require('should');
 
 
 describe('Library loads correctly', function(){
